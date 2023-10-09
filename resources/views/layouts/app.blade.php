@@ -7,6 +7,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
+<link rel="shortcut icon" href="{{ asset('favicon.ico') }}" >
     <title>@yield('title')</title>
 
 

@@ -121,7 +121,7 @@
                         class="link-apps-url  hover:scale-90  duration-300 p-2 text-white bg-gray-600 rounded-md hover:bg-gray-300 hover:text-gray-900 shadow-md shadow-gray-500">
                         <i class="fa-solid fa-link"></i> Link Apps
                     </a>
-                    <a href="" target="_blank"
+                    <a href="{{ $projects->github_project }}" target="_blank"
                         class="link-apps-url p-2 hover:scale-90 duration-300 text-white bg-gray-600 rounded-md hover:bg-gray-300 hover:text-gray-900 shadow-md shadow-gray-500"><i
                             class="fa-brands fa-github"></i> Github</a>
                 </div>
