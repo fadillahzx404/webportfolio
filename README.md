@@ -6,13 +6,15 @@ hello everyone i build this website to giving anyone know about my project has b
 
 ## Website Used
 
-Laravel 10
-Tailwind CSS 3
-PHP 8.1
-jquery 3.7.1
-Font awesome 6.4.2
-SplideJS 4.4.1
-CKEditor 5
-Toastify-JS
-MySQL
+<ul>
+    <li>Laravel 10</li>
+<li>Tailwind CSS 3</li>
+<li>PHP 8.1</li>
+<li>jquery 3.7.1</li>
+<li>Font awesome 6.4.2</li>
+<li>SplideJS 4.4.1</li>
+<li>CKEditor 5</li>
+<li>Toastify-JS</li>
+<li>MySQL</li>
+</ul>
 
