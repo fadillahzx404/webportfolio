@@ -1,0 +1,8 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "@splidejs/splide/dist/css/splide.min.css";
+@import "ckeditor-tailwind-reset/ckeditor-tailwind-reset";
+
+@import "toastify-js/src/toastify.css";

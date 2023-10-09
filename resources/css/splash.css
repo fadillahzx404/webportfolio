@@ -1,0 +1,184 @@
+/* Desktop */
+
+@keyframes lefter {
+    from {
+        left: -400px;
+        opacity: 0;
+    }
+    to {
+        left: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes drop {
+    from {
+        bottom: -300px;
+        opacity: 0;
+    }
+    to {
+        bottom: 0px;
+        opacity: 1;
+    }
+}
+@keyframes upper {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
+}
+@keyframes righter {
+    from {
+        right: -300px;
+        opacity: 0;
+    }
+    to {
+        right: 0px;
+        opacity: 1;
+    }
+}
+@keyframes hidden-splash {
+    25% {
+        opacity: 10;
+    }
+    50% {
+        opacity: 6;
+    }
+    75% {
+        opacity: 2;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.splash-screen {
+    background-color: #1f2937;
+    min-height: 100%;
+    width: 100vw;
+    animation: hidden-splash 4.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+.splash {
+    display: flex;
+    justify-content: center;
+    min-height: 100%;
+    width: 100vw;
+    position: fixed;
+    top: 300px;
+}
+
+.image-splash {
+    animation: lefter 2.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+.dev {
+    animation: upper 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    position: relative;
+}
+.des {
+    animation: drop 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    position: relative;
+}
+.id {
+    animation: righter 2s;
+
+    animation-timing-function: right ease-out;
+    animation-fill-mode: forwards;
+    position: relative;
+}
+
+@keyframes drop-bom {
+    from {
+        top: -12px;
+        opacity: 0;
+    }
+    to {
+        bottom: 350px;
+        opacity: 12;
+        display: none;
+    }
+}
+
+@keyframes atomic {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    25% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    65% {
+        opacity: 2;
+    }
+    75% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0.1;
+        display: none;
+    }
+}
+.bom-atom {
+    width: 100vw;
+    height: 100%;
+}
+.bom {
+    position: relative;
+    top: 360px;
+    left: 710px;
+    animation: drop-bom 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    transform: rotate(-30deg);
+}
+.atom {
+    position: absolute;
+    opacity: 0;
+    top: 30px;
+    left: 530px;
+    animation: atomic 2s;
+    animation-delay: 3s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+@keyframes pakcoy {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.Packet {
+    opacity: 0;
+    animation: pakcoy 3s;
+    animation-delay: 4.9s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+.info {
+    font-size: 50px;
+}
+
+/* Laptop  */
