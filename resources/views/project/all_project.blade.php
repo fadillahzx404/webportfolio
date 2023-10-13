@@ -17,9 +17,9 @@
 
         </div>
     </section>
-    <div class="container mx-auto p-10 min-md:px-20">
+    <div class="container mx-auto [@media(min-width:768px)]:px-20">
 
-        <section class="menu-toggle flex min-md:flex-row max-sm:flex-col justify-between">
+        <section class="menu-toggle flex min-md:flex-row max-sm:flex-col [@media(max-width:625px)]:-ml-3 justify-between mt-10">
             <div class="menu-start flex max-sm:hidden">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
@@ -70,8 +70,8 @@
                 <a href="{{ route('detail_project', $project->id) }}">
                     <div class="card-body flex flex-col">
                         <div
-                            class="box-border min-md:w-72 min-lg:max-h-[24.5rem] [@media(width:768px)]:max-h-[15.5rem] max-lg:overflow-hidden rounded-lg bg-white border-solid border-2 border-gray-200  shadow-xl shadow-gray-400/50 hover:shadow-gray-900/50 transition hover:scale-105  ease-in-out duration-300">
-                            <img class="object-fill rounded-t-lg border-b border-gray-200 border-solid lg:h-44 w-full "
+                            class="box-border min-md:w-72 h-auto  max-lg:overflow-hidden rounded-lg bg-white border-solid border-2 border-gray-200  shadow-xl shadow-gray-400/50 hover:shadow-gray-900/50 transition hover:scale-105  ease-in-out duration-300">
+                            <img class="object-fill rounded-t-lg border-b border-gray-200 border-solid w-full "
                                 src="{{ $project->photo_cover ? asset('storage/' . $project->photo_cover) : '/images/img_not_found.png' }}"
                                 alt="" />
                             <p class="title-card text-md px-2 pt-3 font-extrabold ">

@@ -28,9 +28,9 @@
 
     </section>
 
-    <div class="container mx-auto p-5 my-10 ">
-        <section class="content-experience px-20 max-sm:px-5 flex flex-col gap-6">
-            <div class="save_cv text-end p-4 hover:scale-y-95">
+    <div class="container mx-auto p-5 my-10  max-sm:min-w-full">
+        <section class="content-experience px-20 max-sm:px-8 flex flex-col gap-6">
+            <div class="save_cv text-end p-4 max-sm:p-2 hover:scale-y-95">
                 <a href="/download_cv" target="_blank"
                     class="p-2 bg-gray-700 text-sm text-white rounded-md shadow-md shadow-gray-400 transition delay-150 duration-300 ease-in-out hover:text-gray-700 hover:bg-gray-400 hover:scale-75"><i
                         class="fa-solid fa-download"></i> Save

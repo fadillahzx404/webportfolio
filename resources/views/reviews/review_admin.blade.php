@@ -1,20 +1,16 @@
 <x-app_dashbord-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Categories Projects') }}
+            {{ __('Review Admin') }}
         </h2>
     </x-slot>
 
     <div class="flash-data" data-flash="{!! \Session::get('Success') !!}"></div>
 
-    <div class="container py-12 p-12 max-sm:p-1 max-sm:mt-10 max-sm:min-w-full">
-        <div class="mb-6">
-            <a href="{{ route('category_project_admin_add') }}"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md  text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
-                Category Project</a>
-        </div>
+    <div class="container py-12 p-12 max-sm:p-8 max-sm:min-w-full">
 
-        <section class="table-category-project bg-white">
+
+        <section class="table-reviews bg-white">
 
             <div class="relative overflow-x-auto shadow-lg border-b border-gray-200 sm:rounded-lg p-5">
 
@@ -40,38 +36,44 @@
                             <th scope="col" class="p-4">
                                 No
                             </th>
-                            <th scope="col" class="px-24 py-3">
-                                Category Project
+                            <th scope="col" class="px-6 py-3">
+                                Name Review
                             </th>
-                            <th scope="col" class="px-24 py-3">
-                                Slug
+                            <th scope="col" class="px-6 py-3">
+                                Photo Review
                             </th>
-                            <th scope="col" class="px-12 py-3 text-center">
-                                Action
+                            <th scope="col" class="px-6 py-3">
+                                Review Description
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Aksi
                             </th>
 
                         </tr>
                     </thead>
                     <tbody>
 
-                        @foreach ($catpro as $catp)
+                        @foreach ($reviews as $rv)
                             <tr
                                 class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                 <td class="w-4 py-4 p-4 text-center">
                                     {{ $loop->iteration }}
                                 </td>
                                 <th scope="row"
-                                    class="px-24 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{ $catp->name_category }}
+                                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{ $rv->name_review }}
                                 </th>
 
-                                <td class="px-24 py-4">
-                                    {{ $catp->slug }}
+                                <td class="px-6 py-4">
+                                    <img src="{{ asset('storage/'. $rv->foto_profile) }}" class="rounded-full h-24" alt="">
+                                </td>
+                                <td class="px-6 py-4">
+                                   {!! $rv->review_desc !!}
                                 </td>
 
-                                <td class="px-12 py-4 text-center">
+                                <td class="px-6 py-4">
 
-                                    <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider-{{ $catp->id }}"
+                                    <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider-{{ $rv->id }}"
                                         class="inline-flex items-center  border border-transparent p-2 text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150 shadow-sm shadow-gray-400">
                                         <div>Aksi</div>
 
@@ -85,13 +87,13 @@
                                         </div>
                                     </button>
 
-                                    <div id="dropdownDivider-{{ $catp->id }}"
+                                    <div id="dropdownDivider-{{ $rv->id }}"
                                         class="z-10 hidden  divide-y divide-gray-100 rounded-lg shadow w-44 bg-gray-300 dark:divide-gray-600">
                                         <ul class="py-0 text-sm  dark:text-gray-200"
                                             aria-labelledby="dropdownDividerButton">
                                             <li>
                                                 <a class=" hover:bg-yellow-200 mt-0"
-                                                    href="{{ route('category_project_edit', $catp->id) }}">
+                                                    href="{{ route('review_edit', $rv->id) }}">
                                                     <div
                                                         class="text-center text-gray-700 py-2 rounded-t-md hover:bg-yellow-200">
                                                         <i class="fa-regular fa-pen-to-square"></i> Edit
@@ -102,7 +104,7 @@
                                         </ul>
                                         <div class="py-0">
                                             <a class="hover:bg-green-200"
-                                                href="{{ route('category-project-delete', $catp->id) }}">
+                                                href="{{ route('review_delete', $rv->id) }}">
                                                 <div
                                                     class="text-center text-gray-700 py-2 rounded-b-md hover:bg-red-700 hover:text-white">
                                                     <i class="fa-solid fa-trash"></i> Delete

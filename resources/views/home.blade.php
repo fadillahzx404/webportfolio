@@ -11,6 +11,7 @@
             <p class=" text-xl mt-2 text-white pt-1 text-center font-black id">.id</p>
         </div>
     </div>
+    <div class="flash-data" data-flash="{!! \Session::get('Success') !!}"></div>
     <div class="container-fluid mx-auto p-5 [@media(min-width:768px)]:mt-20">
         <section
             class="Profile [@media(min-width:768px)]:grid [@media(min-width:768px)]:grid-cols-2 max-sm:flex max-sm:flex-col-reverse  mt-3">
@@ -155,7 +156,7 @@
                             <div class="card-body flex flex-col ">
                                 <div
                                     class="box-border xl:w-80 [@media(width:1024px)]:w-72 [@media(max-width:645px)]:max-w-[19rem] [@media(max-width:645px)]:min-h-[16rem] md:min-h-[18rem] min-h-[22.5rem]  rounded-lg bg-white border-solid border-2 border-gray-200  shadow-xl shadow-gray-400/50 hover:shadow-gray-900/50 transition hover:scale-105  ease-in-out duration-300">
-                                    <img class="object-fill rounded-t-lg border-b border-gray-200 border-solid [@media(max-width:768px)]:max-h-36  h-52 w-full "
+                                    <img class="object-fill rounded-t-lg border-b border-gray-200 border-solid [@media(max-width:768px)]:max-h-auto h-auto w-full "
                                         src="{{ $pro->photo_cover ? asset('storage/' . $pro->photo_cover) : '/images/img_not_found.png' }}"
                                         alt="" />
                                     <p
@@ -232,6 +233,60 @@
             </div>
         </section>
 
+        <section class="form-review mt-20">
+            <p class="text-center mb-12 text-5xl max-sm:text-2xl font-bold">Give your review<br/> on here.</p>
+<div class="card-form mx-auto [@media(min-width:1024px)]:mx-28 border border-gray-200 p-5 rounded-lg shadow-lg">
+
+<form method="post" action="{{ route('form_review') }}"  enctype="multipart/form-data">
+@csrf
+    <div class="mb-6">
+
+<div class="grid grid-cols-2 max-sm:grid-cols-1 gap-5">
+<div class="flex flex-col">
+<label for="result-foto" class="text-center">Upload your foto <span class="text-sm text-red-400"> (Optional).</span></label>
+<p class=" text-xs text-center text-gray-400 dark:text-red-600">If you doesn't wanna use a photo profile don't upload a photo.</p>
+<div class="flex items-center justify-center w-full mt-3">
+
+    <label for="imgInp" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+        <div class="flex flex-col items-center justify-center pt-5 pb-6">
+            <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+            </svg>
+            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">PNG, JPG or JPEG</p>
+        </div>
+        <input id="imgInp" type="file" class="hidden" name="foto_profile" />
+    </label>
+</div>
+</div>
+<div class="flex flex-col">
+    <label for="result-foto-label" class="text-center mb-3">Result foto</label>
+    <div class="w-full h-full grid">
+
+            <img src="" class="result-foto w-48 h-48 rounded-full border border-gray-300 shadow-lg place-self-center object-center object-contain" id="resultfoto" alt="">
+
+    </div>
+</div>
+</div>
+
+  </div>
+  <div class="mb-6">
+    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your name</label>
+    <input type="text" name="name_review" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Fadillah Wahyu" required>
+  </div>
+  <div class="mb-6">
+
+<label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your review</label>
+<textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="The best programmer i working with him . ." name="review_desc" required></textarea>
+
+  </div>
+
+  <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+</form>
+</div>
+
+        </section>
+
         <section class="review grid gap-3 [@media(min-width:768px)]:mt-24 mt-12 justify-items-center mx-auto">
             <div class="title mb-12">
                 <p class="text-4xl text-gray-800 font-black">Our Review</p>
@@ -239,57 +294,22 @@
             <div class="splide">
                 <div class="splide__track">
                     <ul class="splide__list">
+                        @foreach ($reviews as $rv)
+
+
                         <li class="splide__slide pb-12">
                             <div class="grid justify-items-center">
                                 <div
                                     class="border rounded-lg border-solid border-gray-300 p-2 shadow-md shadow-gray-400 mx-3 w-8/12 h-12/12 grid justify-items-center">
-                                    <img src="images/logo.png" class="w-12 h-12 mt-2" alt="" />
-                                    <p class="mt-2 text-lg font-semibold">User1</p>
+                                    <img src="{{ $rv->foto_profile ? asset('storage/' . $rv->foto_profile) : '/images/logo.png'}}" class="w-20 mt-2 rounded-full" alt="" />
+                                    <p class="mt-2 text-lg font-semibold">{{ $rv->name_review }}</p>
                                     <p class="mt-2 mb-2 p-3 text-justify line-clamp-4 hover:line-clamp-0">
-                                        Lorem Ipsum is simply dummy text of the
-                                        printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard dummy
-                                        text ever since the 1500s, when an unknown
-                                        printer took a galley of type and scrambled
-                                        it to make a type specimen book
+                                        {{ $rv->review_desc }}
                                     </p>
                                 </div>
                             </div>
                         </li>
-                        <li class="splide__slide">
-                            <div class="grid justify-items-center">
-                                <div
-                                    class="border rounded-lg border-solid border-gray-300 p-2 shadow-md shadow-gray-400 mx-3 w-8/12 grid justify-items-center">
-                                    <img src="images/logo.png" class="w-12 h-12 mt-2" alt="" />
-                                    <p class="mt-2 text-lg font-semibold">User2</p>
-                                    <p class="mt-2 mb-2 p-3 text-justify line-clamp-4">
-                                        Lorem Ipsum is simply dummy text of the
-                                        printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard dummy
-                                        text ever since the 1500s, when an unknown
-                                        printer took a galley of type and scrambled
-                                        it to make a type specimen book
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="grid justify-items-center">
-                                <div
-                                    class="border rounded-lg border-solid border-gray-300 p-2 shadow-md shadow-gray-400 mx-3 w-8/12 grid justify-items-center">
-                                    <img src="images/logo.png" class="w-12 h-12 mt-2" alt="" />
-                                    <p class="mt-2 text-lg font-semibold">User3</p>
-                                    <p class="mt-2 mb-2 p-3 text-justify line-clamp-4">
-                                        Lorem Ipsum is simply dummy text of the
-                                        printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard dummy
-                                        text ever since the 1500s, when an unknown
-                                        printer took a galley of type and scrambled
-                                        it to make a type specimen book
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
+@endforeach
                     </ul>
                 </div>
             </div>
@@ -321,3 +341,15 @@
 
     </div>
 @endsection
+
+@push('addon-script')
+<script>
+imgInp.onchange = evt => {
+  const [file] = imgInp.files
+  if (file) {
+    resultfoto.src = URL.createObjectURL(file)
+  }
+}
+</script>
+
+@endpush

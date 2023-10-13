@@ -1,11 +1,11 @@
-<x-appdashboard-layout>
+<x-app_dashbord-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Category Project Edit') }}
         </h2>
     </x-slot>
 
-    <div class="container py-12 p-12">
+    <div class="container py-12 p-12 max-sm:p-1 max-sm:mt-10 max-sm:min-w-full">
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -18,11 +18,11 @@
                 </ul>
             </div>
         @endif
-        <section class="category_project_add bg-white w-11/12 mx-auto">
+        <section class="category_project_edit bg-white w-11/12 mx-auto">
 
-            <div class="relative overflow-x-auto  shadow-md border-2 border-gray-300 sm:rounded-lg p-5">
+            <div class="relative overflow-x-auto  shadow-md border-2 border-gray-300 rounded-md sm:rounded-lg p-5">
                 <div class="subtitle">
-                    <p class="font-semibold text-lg text-dark-900">Edit Category Project <b
+                    <p class="font-semibold text-lg text-dark-900 max-sm:text-sm">Edit Category Project <b
                             class="p-1 ml-1 rounded-md bg-gray-600 text-white">{{ $cat->name_category }}</b>
                     </p>
                 </div>
@@ -85,4 +85,4 @@
                 });
         </script>
     @endpush
-</x-appdashboard-layout>
+</x-app_dashbord-layout>

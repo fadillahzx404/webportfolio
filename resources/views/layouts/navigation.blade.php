@@ -28,6 +28,9 @@
                     <x-nav-link :href="route('experience_admin')" :active="request()->routeIs('experience_admin')">
                         {{ __('Experience') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('review_admin')" :active="request()->routeIs('review_admin')">
+                        {{ __('Review') }}
+                    </x-nav-link>
 
                 </div>
             </div>
@@ -99,10 +102,30 @@
         </div>
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('project_admin')" :active="request()->routeIs('project_admin')">
-                {{ __('project_admin') }}
+                {{ __('Project') }}
             </x-responsive-nav-link>
 
         </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('category_project_admin')" :active="request()->routeIs('category_project_admin')">
+                {{ __('Category Project') }}
+            </x-responsive-nav-link>
+
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('experience_admin')" :active="request()->routeIs('experience_admin')">
+                {{ __('Experience') }}
+            </x-responsive-nav-link>
+
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('review_admin')" :active="request()->routeIs('review_admin')">
+                {{ __('Review') }}
+            </x-responsive-nav-link>
+
+        </div>
+
+
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">

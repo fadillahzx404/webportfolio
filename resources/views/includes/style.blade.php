@@ -6,8 +6,26 @@
 />
 
 
-
+<style>
+    @media (max-width:625px){
+        .video-project{
+        width: 325px;
+        height: auto;
+    }
+    @media (min-width:768px) {
+        .image-detail-1{
+            left:120px;
+            top:20px
+        }
+        .image-detail-3{
+            left:120px;
+            top:20px
+        }
+    }
+    }
+</style>
 
 <!-- Styles -->
 
-@vite(['resources/css/app.css','resources/css/splash.css','resources/js/app.js'])
+
+@vite(['resources/css/app.css','resources/js/app.js','resources/js/toast.js','resources/css/splash.css'])

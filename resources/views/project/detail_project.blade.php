@@ -7,7 +7,7 @@
 @section('content')
     <section id="heading-section" class="heading-section bg-white pt-28">
 
-        <div class="flex flex-row justify-between px-52">
+        <div class="flex flex-row justify-between min-md:px-52 md:px-20 max-sm:grid max-sm:grid-cols-1 max-sm:mx-auto max-sm:px-24">
             <div class="title_subtitle">
                 <div class="images-and-category flex flex-row mb-5"><img src="{{ asset('storage/' . $projects->icon_project) }}"
                         class="w-12 h-12 " alt="">
@@ -37,10 +37,10 @@
     </section>
 
 
-    <div class="container mx-auto p-10 px-24    ">
+    <div class="container mx-auto p-10 max-sm:p-1 min-md:px-24 ">
 
 
-        <nav class="flex" aria-label="Breadcrumb">
+        <nav class="flex max-sm:pt-5" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-3">
                 <li class="inline-flex items-center">
                     <a href="/projects"
@@ -73,27 +73,27 @@
 
 
 
-            <div class="content-heading-1">
-                <p class="title-heading-1 text-xl font-bold text-gray-800">
+            <div class="content-heading-1 max-sm:w-72">
+                <p class="title-heading-1 text-xl max-sm:mb-2 font-bold text-gray-800">
                     Background
                 </p>
-                <p class="text-md">{{ strip_tags($projects->desc_project) }}</p>
+                <p class="text-md text-justify">{{ strip_tags($projects->desc_project) }}</p>
             </div>
             <div class="content-heading-2">
                 <p class="title-heading-2 text-xl font-bold text-gray-800">
                     Images Apps
                 </p>
                 <p class="text-md">some of the pictures in this project.</p>
-                <div class="image-project flex flex-row content-center mt-16 mx-auto ">
+                <div class="image-project flex flex-row max-sm:grid max-sm:grid-cols-1 max-sm:gap-3 content-center mt-16 mx-auto ">
                     <img src="{{ asset('storage/' . $projects->photo_left) }}"
-                        class="h-2/6 w-2/6 relative z-0 shadow-sm shadow-gray-500 rounded-sm transform hover:scale-110 hover:z-30 duration-300"
-                        style="left:120px;top:20px" alt="">
+                        class="img-detail-1 h-2/6 w-2/6 relative z-0 max-sm:w-auto max-sm:h-auto shadow-sm shadow-gray-500 rounded-sm transform hover:scale-110 hover:z-30 duration-300"
+                         alt="">
                     <img src="{{ asset('storage/' . $projects->photo_center) }}"
-                        class="h-2/6 w-2/6 relative z-20 shadow-sm shadow-gray-500 rounded-sm  transform hover:scale-110 duration-300"
+                        class="image-detail-2 h-2/6 w-2/6 relative z-20 max-sm:w-auto max-sm:h-auto shadow-sm shadow-gray-500 rounded-sm  transform hover:scale-110 duration-300"
                         alt="">
                     <img src="{{ asset('storage/' . $projects->photo_right) }}"
-                        class="h-2/6 w-2/6 relative z-10 shadow-sm shadow-gray-500 rounded-sm transform hover:scale-110 hover:z-30 duration-300"
-                        style="right:120px; top:20px" alt="">
+                        class="image-detail-3 h-2/6 w-2/6 relative z-10 max-sm:w-auto max-sm:h-auto shadow-sm shadow-gray-500 rounded-sm transform hover:scale-110 hover:z-30 duration-300"
+                         alt="">
                 </div>
             </div>
             <div class="content-heading-3 mt-24 justify-self-center">
@@ -102,7 +102,7 @@
                 </p>
                 <p class="text-md text-center">this preview of video project.</p>
                 <div class="flex content-center mt-10 mx-auto">
-                    <iframe width="660" height="415"
+                    <iframe class="video-project" width="660" height="415"
                         src="{{ $projects->video_link ? $projects->video_link : 'https://www.youtube.com/embed/Z5NoQg8LdDk?si=11_1NYJTcrCpZ2or' }}"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

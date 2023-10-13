@@ -1,4 +1,4 @@
-<x-appdashboard-layout>
+<x-app_dashbord-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Projects') }}
@@ -8,7 +8,7 @@
     <div class="flash-data" data-flash="{!! \Session::get('Success') !!}"></div>
 
 
-    <div class="container py-12 p-12">
+    <div class="container py-12 p-12 max-sm:p-4 max-sm:mt-10 max-sm:min-w-full">
 
         <div class="mb-6">
             <a href="{{ route('project_admin_add') }}"
@@ -82,7 +82,7 @@
                                 </td>
                                 <td class="px-6 py-4">
 
-                                    <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider"
+                                    <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider-{{ $project->id }}"
                                         class="inline-flex items-center  border border-transparent p-2 text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150 shadow-sm shadow-gray-400">
                                         <div>Aksi</div>
 
@@ -96,7 +96,7 @@
                                         </div>
                                     </button>
 
-                                    <div id="dropdownDivider"
+                                    <div id="dropdownDivider-{{ $project->id }}"
                                         class="z-10 hidden  divide-y divide-gray-100 rounded-lg shadow w-44 bg-gray-300 dark:divide-gray-600">
                                         <ul class="py-0 text-sm  dark:text-gray-200"
                                             aria-labelledby="dropdownDividerButton">
@@ -111,7 +111,8 @@
                                             </li>
 
                                         </ul>
-                                        <div class="py-0">
+                                        <ul class="py-0">
+                                            <li>
                                             <a class="hover:bg-green-200"
                                                 href="{{ route('project_admin_delete', $project->id) }}">
                                                 <div
@@ -120,7 +121,8 @@
                                                 </div>
 
                                             </a>
-                                        </div>
+                                            </li>
+                                        </ul>
                                     </div>
 
 
@@ -137,4 +139,4 @@
     </div>
 
 
-</x-appdashboard-layout>
+</x-app_dashbord-layout>

@@ -1,11 +1,11 @@
-<x-appdashboard-layout>
+<x-app_dashbord-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Experience Add') }}
         </h2>
     </x-slot>
 
-    <div class="container py-12 p-12">
+    <div class="container py-12 p-12 max-sm:p-1 max-sm:mt-10 max-sm:min-w-full">
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -17,7 +17,7 @@
         @endif
         <section class="experience_add bg-white w-11/12 mx-auto">
 
-            <div class="relative overflow-x-auto  shadow-md border-2 border-gray-300 sm:rounded-lg p-5">
+            <div class="relative overflow-x-auto  shadow-md border-2 border-gray-300 rounded-md sm:rounded-lg p-5">
                 <div class="subtitle">
                     <p class="font-semibold text-lg text-dark-900 animate-bounce">Add New Experience
                     </p>
@@ -29,7 +29,7 @@
                 <form action="{{ route('experience-admin-store') }}" method="POST" enctype="multipart/form-data"
                     class="mt-12">
                     @csrf
-                    <div class="mb-6 grid grid-cols-2 gap-6">
+                    <div class="mb-6 grid grid-cols-2 max-sm:grid-cols-1 gap-6">
                         <div>
                             <label for="start_date_exp"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Start Date Your
@@ -127,4 +127,4 @@
                 });
         </script>
     @endpush
-</x-appdashboard-layout>
+</x-app_dashbord-layout>

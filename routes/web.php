@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\ExperiencesController;
 use App\Http\Controllers\ContactController;
@@ -22,6 +23,7 @@ use App\Http\Controllers\CategoryProjectController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::post('/form_review', [HomeController::class, 'form_review'])->name('form_review');
 
 Route::get('/projects', [ProjectsController::class, 'index'])->name('projects');
 Route::get('/projects/detail_project/{id}', [ProjectsController::class, 'detail_project'])->name('detail_project');
@@ -57,6 +59,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/experience_admin_edit/{id}', [ExperiencesController::class, 'experience_admin_update'])->name('experience-admin-update');
     Route::get('/experience_admin_delete/{id}', [ExperiencesController::class, 'experience_admin_delete'])->name('experience_admin_delete');
     Route::get('/download_cv', [ExperiencesController::class, 'download_cv'])->name('download_cv');
+
+    //Review
+    Route::get('/review_admin', [ReviewsController::class, 'index'])->name('review_admin');
+    Route::get('/review_edit/{id}', [ReviewsController::class, 'edit'])->name('review_edit');
+    Route::post('/review_update/{id}', [ReviewsController::class, 'update'])->name('review_update');
+    Route::get('/review_delete/{id}', [ReviewsController::class, 'destroy'])->name('review_delete');
 });
 
 Route::middleware('auth')->group(function () {
