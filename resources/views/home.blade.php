@@ -2,6 +2,9 @@
 @section('title')
     HomePage
 @endsection
+@push('addon-style')
+@vite('resources/js/splider.js')
+@endpush
 @section('content')
     <div class="splash-screen absolute z-50 -top-4">
         <div class="splash flex justify-center">

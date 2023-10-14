@@ -34,6 +34,6 @@ class HomeController extends Controller
 
         return redirect()
             ->route('home')
-            ->with('Success', 'Review has been add');
+            ->with('Success', 'Thanks you for your review :).');
     }
 }

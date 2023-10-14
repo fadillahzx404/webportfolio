@@ -10,6 +10,8 @@ export default defineConfig({
                 "resources/js/app.js",
                 "resources/js/toast.js",
                 "resources/js/toast-error.js",
+                "resources/js/toast-home.js",
+                "resources/js/splider.js",
             ],
             refresh: true,
         }),

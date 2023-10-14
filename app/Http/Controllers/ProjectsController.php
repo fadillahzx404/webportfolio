@@ -12,6 +12,12 @@ use App\Http\Requests\ProjectsRequest;
 
 class ProjectsController extends Controller
 {
+
+    public function __construct()
+    {
+        $path = '';
+    }
+
     public function index()
     {
         $projects = Projects::all();
@@ -82,6 +88,7 @@ class ProjectsController extends Controller
 
         $item = Projects::findOrFail($id);
 
+
         $item->update($data);
 
         return redirect()
@@ -91,6 +98,14 @@ class ProjectsController extends Controller
     public function project_admin_delete($id)
     {
         $item = Projects::findOrFail($id);
+
+        $photo_cover = $item['photo_cover'];
+        $photo_left = $item['photo_left'];
+        $photo_center = $item['photo_center'];
+        $photo_right = $item['photo_right'];
+
+        Storage::disk('public')->delete([$photo_cover, $photo_left,$photo_center,$photo_right]);
+
         $item->delete();
         return redirect()
             ->route('project_admin')

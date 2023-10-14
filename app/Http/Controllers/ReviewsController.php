@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Reviews;
 use App\Http\Requests\StoreReviewRequest;
 use App\Http\Requests\UpdateReviewRequest;
+use Illuminate\Support\Facades\Storage;
 
 class ReviewsController extends Controller
 {
@@ -77,6 +78,8 @@ class ReviewsController extends Controller
     public function destroy(Reviews $reviews,$id)
     {
         $item = Reviews::findOrFail($id);
+        $foto = $item['foto_profile'];
+        Storage::disk('public')->delete($foto);
         $item->delete();
         return redirect()
             ->route('review_admin')

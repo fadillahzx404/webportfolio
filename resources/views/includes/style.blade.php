@@ -28,4 +28,4 @@
 <!-- Styles -->
 
 
-@vite(['resources/css/app.css','resources/js/app.js','resources/js/toast.js','resources/css/splash.css'])
+@vite(['resources/css/app.css','resources/js/app.js','resources/js/toast-home.js','resources/css/splash.css'])
